@@ -7,6 +7,10 @@ html, body {
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100%;
+}
+
 header, nav, footer {
     margin: 0;
     padding: 0;
