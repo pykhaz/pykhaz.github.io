@@ -1,0 +1,118 @@
+
+/* @font-face { */
+/*   font-family: pixelFont; */
+/*   src: url('file:///home/khaz/.local/share/fonts/Unknown Vendor/TrueType/BigBlue TerminalPlus/BigBlue_TerminalPlus_Regular.ttf'); */
+/* } */
+
+@font-face {
+  font-family: pixelFont;
+  src: url('file:///home/khaz/.local/share/fonts/Unknown Vendor/TrueType/VT323/VT323_Regular.ttf');
+}
+
+:root {
+  --pixelFontSize: 1.0em;
+}
+
+* {
+    margin: 0;
+}
+
+body {line-height: 1.4em;
+      background-color: black;
+      color: white;
+      padding: 0.5em;}
+
+figure {border: solid 2px lightslategray;
+      margin: 0.5em;
+      padding: 0.5em;
+      display: inline-block;
+      text-align: center;}
+
+figcaption {text-align: left;}
+figcaption::before {
+      content: "Figure: ";
+      font-weight: bold;  /* Optional: make the "Figure" text bold */
+      font-style: italic; /* Optional: make the "Figure" text italic */
+}
+
+
+.image-size {
+    width: 100%;
+    height: 300px;
+}
+
+h1 {
+      padding-top: 1.5em;
+      padding-bottom: 1.0em;
+      padding-left: 2em;}
+h2 {margin-top: 2em;
+      padding-left: 4em;
+      font-size: 1.1em;
+      font-style: italic;
+    }
+
+pre {display: box;
+    padding-left: 11em;}
+
+p {text-indent: 4em; margin-top: 1.5em; margin-bottom: 0.5em;}
+ol {margin-top: 0.5em; margin-bottom: 0.5em;}
+ul {margin-top: 0.5em; margin-bottom: 0.5em;}
+li p {text-indent: 0em;}
+
+pre code {background-color: black;
+          color: white;
+          padding: 0.0em;
+          font-size: var(--pixelFontSize);
+          }
+
+pre.title {margin-bottom: 3em;}
+
+pre.title code {background-color: black;
+          color: white;
+          padding: 0.0em;
+          font-size: 2em;
+          }
+
+pre.vim code {font-family: pixelFont;
+              background-color: black;
+              color: #FFBF00;
+              padding: 0.0em;}
+
+code {font-family: pixelFont;
+      background-color: #242424;
+      color: #FFBF00; /* Amber */
+      border-radius: 0.3em;
+      padding: 0.35em;
+      font-size: var(--pixelFontSize);
+      font-weight: bold;
+}
+
+a.footnote-ref, a.footnote-back {
+    padding-left: 0.2em;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    color: steelblue;
+}
+
+/* footnotes actual text -- marker: */
+section ol li::marker {
+    color: steelblue;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.9em; /* Increase the size of the marker */
+}
+
+hr {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+#further-reading {
+    padding-bottom: 1.5em;
+}
+.footnotes {
+  padding-top: 5em;
+}
+
+/* code {font-family: "BigBlue TerminalPlus"; */

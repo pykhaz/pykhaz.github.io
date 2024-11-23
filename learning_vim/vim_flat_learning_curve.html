@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Learning Vim</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="vim_flat_learning_curve.css" />
+</head>
+<body>
+<h1 id="vnlc">VNLC</h1>
+<pre class="title"><code>V im
+N o
+L earning
+C urve</code></pre>
+<p><code>TL;DR</code> In this short text there is presented minimal knowledge allowing for usage of basic features of Vim/Neovim text editors.</p>
+<p>Learning Vim with a flat learning curve – could it be possible?</p>
+<p>Start the terminal and:</p>
+<ol start="0" type="1">
+<li><p>in the terminal: <code>nvim &lt;filename&gt;&lt;enter&gt;</code> – to open a file.</p></li>
+<li><p>in Vim: <code>i</code> key – to start actually typing; just after starting, Vim is in <em>normal mode</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. <code>i</code> is one way of entering Vim’s <em>insert mode</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p></li>
+<li><p><code>&lt;esc&gt;</code> key – to stop adding new text; after <code>&lt;esc&gt;</code> Vim turns to <em>normal mode</em>.</p></li>
+<li><p><code>:write &lt;filename&gt;&lt;enter&gt;</code> – to write the file.</p></li>
+<li><p><code>:quit&lt;enter&gt;</code> – to exit Vim.</p></li>
+</ol>
+<p>ATTENTION! Commands like <code>write</code>, or <code>quit</code> must be preceded by <code>:</code> and they do NOT work in <em>insert mode</em> – they’d appear as regular text in the edited file; in <em>normal mode</em>, after the <code>&lt;esc&gt;</code> key is pressed, <code>:</code> turns Vim into <em>command-line mode</em>.</p>
+<p><em>In summary:</em></p>
+<ul>
+<li>4 keys: <code>i</code>, <code>&lt;esc&gt;</code>, <code>:</code> and <code>&lt;enter&gt;</code></li>
+<li>keys for typing the text of document</li>
+<li>1 terminal command (<code>nvim</code> or <code>vim</code>) and 2 Vim commands<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, <code>write</code> and <code>quit</code></li>
+</ul>
+<h2 id="example-0">Example 0</h2>
+<ol type="1">
+<li><p>In terminal:</p>
+<p><code>$ nvim example_0.txt&lt;enter&gt;  # file example_0.txt does not exist yet</code></p></li>
+<li><p>In nvim:</p>
+<ol type="1">
+<li><code>i</code> – switch to insert mode; continue typing the text:</li>
+</ol>
+<pre><code>     - Hello Vim!&lt;enter&gt;
+     &lt;enter&gt;
+     - Hello dude :)&lt;esc&gt;</code></pre>
+<ol start="2" type="1">
+<li>Last <code>&lt;esc&gt;</code> switches to normal mode; save the file and quit with commands:</li>
+</ol>
+<pre><code>     :write&lt;enter&gt;
+     :quit&lt;enter&gt;</code></pre></li>
+<li><p>Result: typed contents were saved to file <code>example_0.txt</code> (in this case there was no filename specified after <code>:write</code>, since Vim was started with the name of the new file).</p></li>
+</ol>
+<hr />
+<h1 id="vnlc-1">VNLC+</h1>
+<p>All of the above +</p>
+<ol type="1">
+<li>Shortcuts:</li>
+</ol>
+<ul>
+<li><p><code>:w</code> for <code>:write</code></p></li>
+<li><p><code>:q</code> for <code>:quit</code></p></li>
+<li><p><code>:wq</code> for write and quit</p>
+<p>1.1. <code>:w</code> vs. <code>:w &lt;filename&gt;</code> – write current file vs. write contents to the <code>&lt;filename&gt;</code>. In other words save vs. save as.</p></li>
+</ul>
+<ol start="2" type="1">
+<li>New commands:</li>
+</ol>
+<ul>
+<li><code>:edit &lt;filename&gt;</code> | <code>:e &lt;filename&gt;</code> – to open (and edit) another file.</li>
+<li><code>:enew</code> for creating an empty, new file.</li>
+<li><code>C-[</code> i.e. <code>Ctrl + [</code> – to exit the insert mode.</li>
+</ul>
+<h2 id="example-1">Example 1</h2>
+<ol type="1">
+<li><p>In terminal (in the same directory where Example 0 was done):</p>
+<p><code>$ nvim&lt;enter&gt;</code></p></li>
+<li><p>In nvim:</p>
+<ol start="0" type="1">
+<li><code>:edit example_0.txt&lt;enter&gt;</code> – opens file <code>example_0.txt</code> (shortcut: <code>:e</code>)</li>
+<li><code>:enew&lt;enter&gt;</code> – to start with an empty, new file. In this example Vim is started opening the previous file - to illustrate the <code>:enew</code> command.</li>
+<li><code>i</code> – to start typing, that is to say to switch to <em>insert mode</em>; right after starting Vim, if no files are passed as arguments, it is possible to simply press <code>i</code> and start typing contents of a new file, without points <code>0</code> and <code>1</code>. Type the text:</li>
+</ol>
+<pre><code>     - Vim, hello again! How are you?&lt;enter&gt;
+     &lt;enter&gt;
+     - Hello dude :D I&#39;m fine, thanks! How about you?&lt;C-[&gt;</code></pre>
+<ol start="3" type="1">
+<li><code>:w example_1.txt&lt;enter&gt;</code> to write the new file with the name provided; after <code>C-[</code> | <code>&lt;esc&gt;</code>, i.e. in normal mode.</li>
+<li><code>:q&lt;enter&gt;</code> to quit Vim.</li>
+</ol></li>
+</ol>
+<hr />
+<p><em>Grand total of arcane Vim knowledge presented in this text:</em></p>
+<ul>
+<li>4 keys: <code>i</code>, <code>&lt;esc&gt;</code>, <code>:</code>, <code>&lt;enter&gt;</code> and 1 combo <code>C-[</code></li>
+<li>1 terminal command (<code>nvim</code> or <code>vim</code>) and 4 Vim commands, <code>write</code>, <code>quit</code>, <code>edit</code> and <code>enew</code></li>
+</ul>
+<p>Additional tips:</p>
+<ul>
+<li><p>Files in Vim exist in buffers (or so they are called). To list all opened buffers: <code>:ls&lt;enter&gt;</code></p></li>
+<li><p>To manage the buffers:</p>
+<ul>
+<li><code>:bn&lt;enter&gt;</code> for the next buffer.</li>
+<li><code>:bp&lt;enter&gt;</code> for the previous one.</li>
+<li><code>:b&lt;number&gt;&lt;enter&gt;</code> for switching to buffer of number from <code>:ls</code>.</li>
+<li><code>:bd&lt;enter&gt;</code> for closing the current buffer.</li>
+</ul>
+<figure>
+<img src="./img/buffers_ls.png" title="Opended buffer, listed with ls" class="image-size" alt="" /><figcaption>buffers and ls</figcaption>
+</figure></li>
+<li><p>Splitting the window:</p>
+<ul>
+<li><code>:split&lt;enter&gt;</code> | <code>:sp&lt;enter&gt;</code> for horizontal split.</li>
+<li><code>:vsplit&lt;enter&gt;</code> | <code>:vs&lt;enter&gt;</code> for vertical split.</li>
+<li><code>C-w w</code> to cycle through all the splits (<code>C-w h | j | k | l</code> won’t be mentioned here).</li>
+<li><code>:only&lt;enter&gt;</code> for closing all other splits, but the current one, e.g.</li>
+</ul>
+<pre class="vim"><code>$ nvim&lt;enter&gt;
+:e example_0.txt&lt;enter&gt;
+:vs&lt;enter&gt;
+C-w w
+:e example_1.txt&lt;enter&gt;</code></pre>
+<p>and both example files are opend in two splits.</p>
+<figure>
+<img src="./img/vim_flat_learning_curve_120.png" title="Two vertical splits" class="image-size" alt="" /><figcaption>two examples, two splits</figcaption>
+</figure></li>
+</ul>
+<hr />
+<h1 id="p.-s.">P. S.</h1>
+<ol type="1">
+<li><p>The purpose of this text was <em>to unearth the truth about grand menace behind learning how to use Vim</em>. This short article wasn’t even supposed to be an introduction to <em>vimtutor</em>. The intention was to show, that only with just a few “vim actions” (pressing <code>i</code>, or <code>&lt;esc&gt;</code>, <code>:</code>), few commands (like <code>e</code>, <code>w</code>, <code>q</code>, <code>enew</code>) it is <em>possible</em> to actually <em>use</em> Vim, open, read end edit existing files and create and save new ones. One could say it is nothing at all. The idea behind this little piece of text is to make a difference between absolute nothing and something; just to get you started with the <em>vimtutor</em> (type this command in the terminal, work with it for some minutes and your life may change…),</p></li>
+<li><p>Commands <code>vim</code> and <code>nvim</code> were used interchangeably. You can choose either, although Neovim seems to be better.</p></li>
+<li><p>Actions indicated with <code>&lt;enter&gt;</code>, <code>&lt;esc&gt;</code>, <code>i</code> and <code>:</code> meant hitting the appropriate key. <em>Vim commands</em>, as described earlier, meant hitting <code>:</code>, typing the actual command, like <code>write</code> | <code>w</code>, and confirming it with <code>&lt;enter&gt;</code>.</p></li>
+<li><p>There must be something going on about Vim, since even creators of entirely different applications make use of the Vim modes (e.g. Obsidian, or a plugin for Sublime Text). Just stick with <em>vimtutor</em> for several minutes, learn about <code>j</code>, <code>k</code>, <code>l</code>, <code>m</code>, perhaps about <code>w</code>, <code>e</code>, <code>b</code> and <code>y</code>, <code>p</code> and writing any text becomes like poetry…</p></li>
+<li><p>Author of this text found configuration of Vim/Neovim troublesome (on author’s linux, the configuration files are <code>~/.vimrc</code>, for Vim, and <code>~/.config/nvim/init.vim</code>, for Neovim). On one hand possibilities of fine crafting the configuration are seemingly endless and may easily provide new functionality in the editor, but on the other, setting configuration in a text file requires at least some knowledge of the program. With internet search engine and AI assistance, along with some tenacity, it is possible to craft even an IDE out of Vim, or to turn it into a LaTeX processor (searching for a suitable plugin, testing it and fine-tuning its settings requires time and effort, though).</p></li>
+</ol>
+<hr />
+<h1 id="further-reading">Further reading</h1>
+<ol type="1">
+<li><a href="https://vimhelp.org/index.html">Vim documentation</a></li>
+<li><a href="https://neovim.io/doc/user/index.html">Neovim documentation</a></li>
+<li><a href="https://vimschool.netlify.app/introduction/vimtutor/">VIMTUTOR</a></li>
+<li><a href="https://vim.rtorr.com/">Vim cheatsheet</a></li>
+</ol>
+<!--
+VFLC
+====
+
+0-advanced features with appropriate functionality.
+───────────────────────────────────────────────────
+
+0. terminal command:
+    `nvim`
+
+0.1. when with filename -- straight to editing the file.
+
+1. `i` -- start typing
+1.1. `esc` -- stop typing
+
+2. `write <filename>` -- to write the file.
+
+3. `edit` -- to open (and edit) another file.
+3.1 `nenew` -- to start with an empty file.
+(After 3, 3.1 -> 2.)
+
+4. `quit` --to exit nvim.
+
+
+VFLC
+====
+
+V im
+F lat
+L earning
+C urve
+
+or
+
+VNLC
+====
+
+V im
+N o
+L earning
+C urve
+-->
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Normal mode is the mode in which Vim is started. To turn to normal mode, press <code>&lt;esc&gt;</code>. <a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Other basic Vim modes, but <em>normal</em>: <em>insert</em>, <em>command-line</em>, <em>visual</em>. <a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>A Vim command is of the form <code>:command&lt;enter&gt;</code> – pressing <code>:</code> puts Vim in the <em>command-line mode</em>, after which follows the actual command, confirmed with <code>&lt;enter&gt;</code>. <a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>

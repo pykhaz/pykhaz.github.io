@@ -1,0 +1,3 @@
+- Hello Vim!
+
+- Hello dude :)

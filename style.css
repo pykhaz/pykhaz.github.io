@@ -9,3 +9,8 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+#main-title {
+    padding-top: 1em;
+    text-align: center;
+    font-size: 1.5em;
