@@ -1,13 +1,5 @@
 
-/* @font-face { */
-/*   font-family: pixelFont; */
-/*   src: url('file:///home/khaz/.local/share/fonts/Unknown Vendor/TrueType/BigBlue TerminalPlus/BigBlue_TerminalPlus_Regular.ttf'); */
-/* } */
-
-@font-face {
-  font-family: pixelFont;
-  src: url('file:///home/khaz/.local/share/fonts/Unknown Vendor/TrueType/VT323/VT323_Regular.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 :root {
   --pixelFontSize: 1.0em;
@@ -73,12 +65,13 @@ pre.title code {background-color: black;
           font-size: 2em;
           }
 
-pre.vim code {font-family: pixelFont;
+pre.vim code {font-family: VT323;
+              font-size: var(--pixelFontSize);
               background-color: black;
               color: #FFBF00;
               padding: 0.0em;}
 
-code {font-family: pixelFont;
+code {font-family: VT323;
       background-color: #242424;
       color: #FFBF00; /* Amber */
       border-radius: 0.3em;
