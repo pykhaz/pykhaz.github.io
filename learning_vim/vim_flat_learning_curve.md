@@ -1,22 +1,28 @@
-# VNLC
+---
+title: |
+  <pre class="title"><code>V im
+  N o
+  L earning
+  C urve</code></pre>
+author: "pykhaz"
+date: "2024-11-24"
+keywords: [vim, neovim, basics, learning]
+---
 
-```title
-V im
-N o
-L earning
-C urve
-```
+# `TL;DR`
 
-`TL;DR` In this short text there is presented minimal knowledge allowing for
+In this short text there is presented minimal knowledge allowing for
 usage of basic features of Vim/Neovim text editors.
 
 Learning Vim with a flat learning curve -- could it be possible?
 
+# VNLC
+
 Start the terminal and:
 
-0. in the terminal: `nvim <filename><enter>` -- to open a file.
+0. in the terminal <i class="fa-solid fa-terminal"></i> `$ nvim <filename><enter>` -- to open a file.
 
-1. in Vim: `i` key -- to start actually typing;
+1. in Vim <i class="fa-regular fa-keyboard"></i> `i` key -- to start actually typing;
    just after starting, Vim is in *normal mode*[^1]. `i` is one way of entering
    Vim's *insert mode*[^2].
 
@@ -40,11 +46,11 @@ into *command-line mode*.
 
 ## Example 0
 
-1. In terminal:
+1. In terminal <i class="fa-solid fa-terminal"></i>
 
     `$ nvim example_0.txt<enter>  # file example_0.txt does not exist yet`
 
-1. In nvim:
+1. In nvim <i class="fa-regular fa-keyboard"></i>
     1. `i` -- switch to insert mode; continue typing the text:
 ```
         - Hello Vim!<enter>
@@ -84,11 +90,11 @@ All of the above +
 
 ## Example 1
 
-1. In terminal (in the same directory where Example 0 was done):
+1. In terminal <i class="fa-solid fa-terminal"></i> (in the same directory where Example 0 was done):
 
     `$ nvim<enter>`
 
-1. In nvim:
+1. In nvim <i class="fa-regular fa-keyboard"></i>
     0. `:edit example_0.txt<enter>` -- opens file `example_0.txt`
        (shortcut: `:e`)
     1. `:enew<enter>` -- to start with an empty, new file.

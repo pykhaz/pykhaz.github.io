@@ -4,29 +4,49 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="pykhaz" />
+  <meta name="dcterms.date" content="2024-11-24" />
+  <meta name="keywords" content="vim, neovim, basics, learning" />
   <title>Learning Vim</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <meta name="description" content="vim neovim funcamentals">
+
   <link rel="stylesheet" href="vim_flat_learning_curve.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 </head>
 <body>
-<h1 id="vnlc">VNLC</h1>
-<pre class="title"><code>V im
+<header id="title-block-header">
+<h1 class="title"><pre class="title"><code>V im
 N o
 L earning
-C urve</code></pre>
-<p><code>TL;DR</code> In this short text there is presented minimal knowledge allowing for usage of basic features of Vim/Neovim text editors.</p>
+C urve</code></pre></h1>
+<p class="author">pykhaz</p>
+<p class="date">2024-11-24</p>
+</header>
+<hr />
+<h2 class="toc-title">Contents</h2>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#tldr"><code>TL;DR</code></a></li>
+<li><a href="#vnlc">VNLC</a>
+<ul>
+<li><a href="#example-0">Example 0</a></li>
+</ul></li>
+<li><a href="#vnlc-1">VNLC+</a>
+<ul>
+<li><a href="#example-1">Example 1</a></li>
+</ul></li>
+<li><a href="#p.-s.">P. S.</a></li>
+<li><a href="#further-reading">Further reading</a></li>
+</ul>
+</nav>
+<h1 id="tldr"><code>TL;DR</code></h1>
+<p>In this short text there is presented minimal knowledge allowing for usage of basic features of Vim/Neovim text editors.</p>
 <p>Learning Vim with a flat learning curve – could it be possible?</p>
+<h1 id="vnlc">VNLC</h1>
 <p>Start the terminal and:</p>
 <ol start="0" type="1">
-<li><p>in the terminal: <code>nvim &lt;filename&gt;&lt;enter&gt;</code> – to open a file.</p></li>
-<li><p>in Vim: <code>i</code> key – to start actually typing; just after starting, Vim is in <em>normal mode</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. <code>i</code> is one way of entering Vim’s <em>insert mode</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p></li>
+<li><p>in the terminal <i class="fa-solid fa-terminal"></i> <code>$ nvim &lt;filename&gt;&lt;enter&gt;</code> – to open a file.</p></li>
+<li><p>in Vim <i class="fa-regular fa-keyboard"></i> <code>i</code> key – to start actually typing; just after starting, Vim is in <em>normal mode</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. <code>i</code> is one way of entering Vim’s <em>insert mode</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p></li>
 <li><p><code>&lt;esc&gt;</code> key – to stop adding new text; after <code>&lt;esc&gt;</code> Vim turns to <em>normal mode</em>.</p></li>
 <li><p><code>:write &lt;filename&gt;&lt;enter&gt;</code> – to write the file.</p></li>
 <li><p><code>:quit&lt;enter&gt;</code> – to exit Vim.</p></li>
@@ -40,9 +60,9 @@ C urve</code></pre>
 </ul>
 <h2 id="example-0">Example 0</h2>
 <ol type="1">
-<li><p>In terminal:</p>
+<li><p>In terminal <i class="fa-solid fa-terminal"></i></p>
 <p><code>$ nvim example_0.txt&lt;enter&gt;  # file example_0.txt does not exist yet</code></p></li>
-<li><p>In nvim:</p>
+<li><p>In nvim <i class="fa-regular fa-keyboard"></i></p>
 <ol type="1">
 <li><code>i</code> – switch to insert mode; continue typing the text:</li>
 </ol>
@@ -78,9 +98,9 @@ C urve</code></pre>
 </ul>
 <h2 id="example-1">Example 1</h2>
 <ol type="1">
-<li><p>In terminal (in the same directory where Example 0 was done):</p>
+<li><p>In terminal <i class="fa-solid fa-terminal"></i> (in the same directory where Example 0 was done):</p>
 <p><code>$ nvim&lt;enter&gt;</code></p></li>
-<li><p>In nvim:</p>
+<li><p>In nvim <i class="fa-regular fa-keyboard"></i></p>
 <ol start="0" type="1">
 <li><code>:edit example_0.txt&lt;enter&gt;</code> – opens file <code>example_0.txt</code> (shortcut: <code>:e</code>)</li>
 <li><code>:enew&lt;enter&gt;</code> – to start with an empty, new file. In this example Vim is started opening the previous file - to illustrate the <code>:enew</code> command.</li>
