@@ -19,20 +19,21 @@ body {
 
 .fg-silver {color: silver;}
 
+#header {
+    margin-bottom: 5em
+}
+
 #main-title {
     display: inline-block;
 
     padding-top: 1em;
     margin: 0 auto;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
+    padding-bottom: 0.5em;
     font-size: 2.0em;
     font-weight: 900;
 
     border-bottom: solid 2px lightslategray;
-}
-
-#header {
-    margin-bottom: 5em
 }
 
 a.article {
@@ -40,3 +41,11 @@ a.article {
     font-style: italic;
     text-decoration: none;
 }
+
+/* colors */
+.marked {
+    color: steelblue;
+}
+
+/* text styles */
+.it { font-style: italic; }
