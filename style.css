@@ -49,3 +49,9 @@ a.article {
 
 /* text styles */
 .it { font-style: italic; }
+
+/* spacing */
+.mrg-tp0 { margin-top: 0.25em; }
+.mrg-tp1 { margin-top: 0.5em; }
+.mrg-bt0 { margin-bottom: 0.25em; }
+.mrg-bt1 { margin-bottom: 0.5em; }
