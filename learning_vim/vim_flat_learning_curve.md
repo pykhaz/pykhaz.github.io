@@ -131,7 +131,16 @@ buffers: `:ls<enter>`
     - `:b<number><enter>` for switching to buffer of number from `:ls`.
     - `:bd<enter>` for closing the current buffer.
 
-    ![buffers and ls](./img/buffers_ls.png "Opended buffer, listed with ls"){ .image-size }
+    [![buffers and ls][image]][hyperlink]
+
+    [hyperlink]: ./img/buffers_ls.png
+    [image]:
+    ./img/buffers_ls.png { .image-size title="Opened buffer, listed with ls" }
+    <figcaption>Opended buffer, listed with ls</figcaption>
+      <!-- – or – -->
+    <!-- [image]: -->
+    <!-- https://www.gravatar.com/avatar/dd5a7ef1476fb01998a215b1642dfd07 -->
+    <!-- "tooltip" -->
 
   - Splitting the window:
     - `:split<enter>` | `:sp<enter>` for horizontal split.
@@ -149,7 +158,12 @@ C-w w
     ```
     and both example files are opend in two splits.
 
-    ![two examples, two splits](./img/vim_flat_learning_curve_120.png "Two vertical splits"){ .image-size }
+    [![two examples, two splits][image2]][hyperlink2]
+
+    [hyperlink2]: ./img/vim_flat_learning_curve_120.png
+    [image2]:
+    ./img/vim_flat_learning_curve_120.png { .image-size title="Opened buffer, listed with ls" }
+    <figcaption>Two examples within two splits</figcaption>
 
 ------------------------------------------------------------------------------
 

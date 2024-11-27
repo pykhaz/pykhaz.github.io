@@ -17,6 +17,10 @@ body {
     padding-left: 1.5em;
 }
 
+li {
+    margin-bottom: 0.5em;
+}
+
 .fg-silver {color: silver;}
 
 #header {
@@ -28,7 +32,7 @@ body {
 
     padding-top: 1em;
     margin: 0 auto;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
     padding-bottom: 0.5em;
     font-size: 2.0em;
     font-weight: 900;
@@ -62,3 +66,15 @@ a.repo {
 .mrg-tp1 { margin-top: 0.5em; }
 .mrg-bt0 { margin-bottom: 0.25em; }
 .mrg-bt1 { margin-bottom: 0.5em; }
+
+/* images */
+
+    .custom-icon32 {
+        width: 32px;
+        margin: 10px;
+        /* border: solid red 1px; */
+        border-radius: 5px; /* Zaokrąglone rogi */
+        /* vertical-align: bottom; */
+        position: relative;
+        bottom: -1.0em;
+    }
