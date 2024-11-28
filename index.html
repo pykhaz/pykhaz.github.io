@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <title>pykhaz: Welcome</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/@fontsource/hermit" rel="stylesheet">
 </head>
+
 <body>
+    <div id="main">
+    <!-- Main title: -->
     <div id="header" class="fg-silver" style="text-align: center;">
         <h1 id="main-title">&nbsp;Welcome to pykhaz.github.io&nbsp;</h1>
             <h2>Index page of user <span class="marked it">pykhaz</span></h2>
@@ -13,13 +19,34 @@
 
     <h2 class="mrg-bt1">Contents</h2>
 
+<!--                              The list                              -->
+
     <ul>
-        <li><a class="repo" href="https://github.com/pykhaz/khcolors">khcolors <img class="custom-icon32" src="./img/icos/py_package.svg" alt="python code icon" title="python project"></a>
-                <p class="mrg-tp0">A python package/application: cli colour chooser, created on 2024.10.29</p>
-            </li>
-        <li><a class="article" href="learning_vim/vim_flat_learning_curve.html">Learning Vim<img class="custom-icon32" src="./img/icos/article.svg" alt="article icon" title="article"></a>
+        <li>
+            <div class="hover-container container-khcolors">
+                <a class="repo" href="https://github.com/pykhaz/khcolors">khcolors <img class="custom-icon32" src="./img/icos/py_package.svg" alt="python code icon" title="python project"></a>
+                <p class="mrg-tp0">Python package/application: cli colour chooser, created on 2024.10.29</p>
+                <div class="hover-base hover-khcolors">
+                    Python application for choosing colours in the cli; with possible specification of `rich` or `css` palettes.
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="hover-container container-vim">
+                <a class="article" href="learning_vim/vim_flat_learning_curve.html">Learning Vim<img class="custom-icon32" src="./img/icos/article.svg" alt="article icon" title="article"></a>
                 <p class="mrg-tp0">A short article about absolute basics of Vim, posted on 2024.11.24</p>
-            </li>
+                <div class="hover-base hover-vim">
+                    Short article proving that Vim can be used even with minimal knowledge of the application.
+                </div>
+            </div>
+        </li>
+
     </ul>
+
+    <p style="height: 100em;"></p>
+    </div>
 </body>
 </html>
+
+

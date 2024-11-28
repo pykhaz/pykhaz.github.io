@@ -9,7 +9,9 @@
     margin: 0;
 }
 
-body {line-height: 1.4em;
+body {
+      min-height: 100%;
+      line-height: 1.4em;
       background-color: black;
       color: white;
       padding: 1.5em;}

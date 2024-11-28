@@ -1,45 +1,46 @@
 * {
     margin: 0;
+    padding: 0;
 }
 
-html, body {
+body {
     background-color: black;
     color: white;
-    height: 100%;
-    margin: 0;
-    padding: 0;
 
     font-family: "Hermit", monospace;
     font-size: 1em;
 }
 
-body {
-    padding-left: 1.5em;
+div#main {
+    padding: 1em;
+}
+
+/* The list: */
+ul {
+    list-style-type: none;
 }
 
 li {
-    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    margin-bottom: 1.5em;
+    border-left: solid 2px lightslategray;
 }
 
 .fg-silver {color: silver;}
 
-#header {
-    margin-bottom: 5em
+/* images */
+
+.custom-icon32 {
+    width: 32px;
+    margin: 10px;
+    /* border: solid red 1px; */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    /* vertical-align: bottom; */
+    position: relative;
+    bottom: -1.0em;
 }
 
-#main-title {
-    display: inline-block;
-
-    padding-top: 1em;
-    margin: 0 auto;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.5em;
-    font-size: 2.0em;
-    font-weight: 900;
-
-    border-bottom: solid 2px lightslategray;
-}
-
+/* links: */
 a.article {
     font-weight: 900;
     font-style: italic;
@@ -67,14 +68,48 @@ a.repo {
 .mrg-bt0 { margin-bottom: 0.25em; }
 .mrg-bt1 { margin-bottom: 0.5em; }
 
-/* images */
+/* hovering */
 
-    .custom-icon32 {
-        width: 32px;
-        margin: 10px;
-        /* border: solid red 1px; */
-        border-radius: 5px; /* Zaokrąglone rogi */
-        /* vertical-align: bottom; */
-        position: relative;
-        bottom: -1.0em;
-    }
+/* common: container, text (base): */
+.hover-container {
+    position: relative; /* Kontener dla tekstu */
+    display: inline-block; /* Dopasowanie do treści */
+    cursor: help; /* Ikona wskazująca możliwość interakcji */
+}
+
+.hover-base {
+    visibility: hidden; /* Ukryj tekst domyślnie */
+    position: fixed; /* Pozycja względem kontenera */
+    right: 50px;
+    top: 10em;
+    /* top: 100%; /1* Pojawia się nad elementem *1/ */
+    /* left: 50%; /1* Wyśrodkowanie tekstu względem kontenera *1/ */
+    max-width: 25em;
+    min-width: 30em;
+    transform: translateX(+5%); /* Korekta pozycjonowania */
+    background-color: black; /* Tło tekstu */
+    color: white; /* Kolor tekstu */
+    padding: 10px; /* Odstępy wewnętrzne */
+    border: 1px solid orange; /* Ramka tekstu */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    /*-- white-space: nowrap; /* Zapobieganie łamaniu tekstu */
+    z-index: 10; /* Warstwa ponad innymi elementami */
+    opacity: 0; /* Ukrycie przezroczystością */
+    transition: opacity 0.3s; /* Animacja pojawiania się */
+}
+
+/* Specific */
+
+.container-khcolors {
+    padding: 5px;
+}
+
+.container-khcolors:hover .hover-khcolors {
+    visibility: visible; /* Pokaż tekst przy najechaniu */
+    opacity: 1; /* Ustaw widoczność */
+}
+
+.container-vim:hover .hover-vim {
+    visibility: visible; /* Pokaż tekst przy najechaniu */
+    opacity: 1; /* Ustaw widoczność */
+}
