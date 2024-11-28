@@ -9,7 +9,6 @@ venv/
 .idea/
 .vscode/
 .repo_data
-objects.inv
 
 # Ignorowanie plików tymczasowych
 .bak/
