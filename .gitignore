@@ -1,0 +1,27 @@
+# Ignorowanie plików .pyc
+*.pyc
+
+# Ignorowanie katalogu z wirtualnym środowiskiem
+venv/
+.pytest_cache/
+
+# Ignorowanie plików konfiguracyjnych IDE
+.idea/
+.vscode/
+.repo_data
+objects.inv
+
+# Ignorowanie plików tymczasowych
+.bak/
+__pycache__/
+tmp/
+tmp_*
+*.swp
+*.tmp
+README.html
+
+# Ignorowanie plików rozwojowych
+.repo_data
+*_dev.py
+mkserve.sh
+/docs/assets/
