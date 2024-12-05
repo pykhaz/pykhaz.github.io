@@ -11,10 +11,10 @@ keywords: [vim, neovim, basics, learning]
 
 # `TL;DR`
 
+Learning Vim with a flat learning curve -- could it be possible?
+
 In this short text there is presented minimal knowledge allowing for
 usage of basic features of Vim/Neovim text editors.
-
-Learning Vim with a flat learning curve -- could it be possible?
 
 # VNLC
 

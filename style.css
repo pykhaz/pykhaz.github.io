@@ -47,7 +47,14 @@ a.article {
     text-decoration: none;
 }
 
-a.repo {
+.article {
+    font-weight: 900;
+    font-style: italic;
+    text-decoration: none;
+    color: darkorange;
+}
+
+.repo {
     font-weight: 900;
     font-style: italic;
     text-decoration: none;
@@ -97,6 +104,9 @@ a.repo {
     opacity: 0; /* Ukrycie przezroczystością */
     transition: opacity 0.3s; /* Animacja pojawiania się */
 }
+
+.inline-element {
+    display: inline;}
 
 /* Specific */
 

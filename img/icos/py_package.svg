@@ -125,14 +125,14 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:40.2251px;line-height:1.25;font-family:sans-serif;stroke-width:0.335209"
-       x="17.006563"
-       y="31.966694"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:52.6719px;line-height:1.25;font-family:Hermit;-inkscape-font-specification:'Hermit, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#00a20e;fill-opacity:1;stroke-width:0.438933"
+       x="0.26506501"
+       y="32.066467"
        id="text7863"><tspan
          sodipodi:role="line"
          id="tspan7861"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Hermit;-inkscape-font-specification:Hermit;stroke-width:0.335209"
-         x="17.006563"
-         y="31.966694">.py</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:52.67190205px;font-family:Hermit;-inkscape-font-specification:'Hermit, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#00a20e;fill-opacity:1;stroke-width:0.438933"
+         x="0.26506501"
+         y="32.066467">.py</tspan></text>
   </g>
 </svg>
