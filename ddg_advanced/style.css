@@ -1,0 +1,84 @@
+/* stylesheet for ddg_advanced.html */
+
+:root {--phi: 1.618;
+       --title-font-size: 4em;
+       --bradius: 0.2em;
+       --input-height: 2em; }
+
+* {margin: 0; padding: 0;}
+
+html {padding: 0; margin: 0;}
+
+body {
+      padding: 1.5em;
+      height: 100vh;
+      background-color: black;
+      color: white;
+
+      display: flex;
+      flex-direction: column;}
+
+#title-heading {margin-bottom: 1em; }
+#main-title {font-size: var(--title-font-size); text-align: center; }
+
+#form-engine {
+    font-family: "Montserrat";
+    border: solid 2px gray;
+    border-radius: calc(var(--bradius)*2);
+    padding: 1.0em;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8em;
+    align-content: flex-start;
+}
+
+
+label {font-weight: 600; }
+input {height: var(--input-height);
+       border-radius: var(--bradius);
+       font-family: Montserrat;
+       background-color: dimgray;
+       color: white;
+       margin-bottom: 1.0em;
+       padding-left: 0.3em; }
+input[type="text"] {width: 100%;}
+input[type="submit"], button {background-color: slategray; color: white;
+                      width: 10em; height: calc( var(--input-height) * var(--phi));
+                      padding: 0.1em; font-weight: 500;
+                      border-radius: var(--bradius); }
+.div-tweens div {width: 49%;}
+.div-tweens {display: flex; flex-direction: row; gap: 1em;
+           border: none 2px yellow; }
+#div-submit-button {text-align: center; }
+
+/* Heading: */
+
+#ddg {
+      font-family: "Montserrat";
+      font-weight: 500;
+      font-size: 4.5em;
+      text-align: center;
+      /* border: solid yellow 1.5px; */
+  }
+
+#ddglogo {
+    width: 15em;
+    float: left;
+    /* border: solid yellow 1.5px; */
+    margin-right: 3em;
+    }
+
+#title-heading {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em
+    margin: 0 0.5em 0.5em 0;
+    }
+
+/* -------------------------------------------------------------------------*/
+
+.dbg {font-family: Hermit; color: orange;}

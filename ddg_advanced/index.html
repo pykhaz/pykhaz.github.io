@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>duckduckgo advanced</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/duckduckgo32.png">
+
+  </head>
+  <body>
+    <!-- <script src="index.js"></script> -->
+
+    <div id="title-heading">
+        <!-- <img src="img/duckduckgo.png" alt="duckduclgo logo" id="ddglogo"> -->
+        <!-- <img src="https://duckduckgo.com/assets/logo_social-media.png"
+            alt="duckduclgo logo" id="ddglogo"> -->
+        <img src="img/DuckDuckGo-Icon-Logo.wine.svg" alt="duckduclgo logo"
+        id="ddglogo">
+        <h1 id="ddg" id="main-title">DuckDuckGo<br>advanced search engine</h1>
+    </div>
+
+    <form id="form-engine">
+        <div>
+            <label for="maint">Main topic:</label>
+            <input type="text" id="maint" name="maint"
+                   value="" autofocus>
+        </div>
+        <div class="div-tweens">
+            <div>
+                <label for="wwords">With words:</label>
+                <input type="text" id="wwords" name="wwords" value="">
+            </div>
+            <div>
+                <label for="wowords">Without words:</label>
+                <input type="text" id="wowords" name="wowords" value="">
+            </div>
+        </div>
+        <div class="div-tweens" id="on-excl-site">
+            <!-- on/excluding site: -->
+            <div>
+                <label for="on-site">On site:</label>
+                <input type="text" id="on-site" name="on-site" value="">
+            </div>
+            <div>
+                <label for="ex-site">Excluding site:</label>
+                <input type="text" id="ex-site" name="ex-site" value="allegro.pl">
+            </div>
+        </div>
+        <div id="div-submit-button">
+            <input type="checkbox" id="active-cbx" title="active" value="active" checked>
+            <!-- <button type="button" onclick="clearFields()">Clear</button> -->
+            <input type="submit" value="Search">
+            <button type="button" onclick="clearFields()">Clear</button>
+        </div>
+    </form>
+
+    <div name="dbgdiv" style="display: none;">
+        <h3 class="dbg">DBG</h3>
+        <p class="dbg">words:&nbsp;»&nbsp;<span id="wordsPart"></span>&nbsp;«
+            of len = <span id="wordsPartLen"></span></p>
+        <p class="dbg">with words:&nbsp;»&nbsp;<span id="withWordsPart"></span>
+        « of len = <span id="withWordsPartLen"></span></p>
+        <p class="dbg">without words:&nbsp;»&nbsp;<span id="withoutWordsPart"></span>
+        « of len = <span id="withoutWordsPartLen"></span></p>
+        <p class="dbg">on site:&nbsp;»&nbsp;<span id="on-site-part"></span>
+        « of len = <span id="on-site-words-part-len"></span></p>
+        <p class="dbg">ex site:&nbsp;»&nbsp;<span id="ex-site-part"></span>
+        « of len = <span id="ex-site-words-part-len"></span></p>
+        <p class="dbg">search url:&nbsp;&nbsp;<span id="resultSearchUrl"></span></p>
+    </div>
+
+    <script>
+
+        document.getElementById("form-engine").
+            addEventListener("submit", function(event) {
+        event.preventDefault();
+        console.log("Formularz został przesłany!");
+        const maintValueRaw = document.getElementById("maint").value;
+        const maintValue = maintValueRaw.trim().replace(/\s+/g, "+");
+        const wwordsValueRaw = document.getElementById("wwords").value;
+        let wwordsValue = '"' +
+                            wwordsValueRaw.trim().replace(/\s+/g, "\" +\"") +
+                            '"';
+        wwordsValue = wwordsValueRaw.trim().length > 0 ? wwordsValue : "";
+        const wowordsValueRaw = document.getElementById("wowords").value;
+        let wowordsValue = '"' +
+                             wowordsValueRaw.trim().replace(/\s+/g, "\" -\"") +
+                             '"';
+        const onSiteValueRaw = document.getElementById("on-site").value;
+        const exSiteValueRaw = document.getElementById("ex-site").value;
+        console.log("wowordsValueRaw (1): ", wowordsValueRaw);
+        console.log("wowordsValue(1): ", wowordsValue);
+        wowordsValue = wowordsValueRaw.trim().length > 0 ? wowordsValue : "";
+        console.log("Main topic:", maintValue);
+        console.log("With words:", wwordsValue);
+        console.log("Without words:", wowordsValue);
+        const searchPhrase = `${maintValue} "${wwordsValue}" -"${wowordsValue}"`;
+        const ddgUrl = "https://duckduckgo.com/?q="
+
+        console.log("maintValue: ", maintValue);
+        /*
+        const baseUrl = "https://duckduckgo.com/?q=";
+        const searchUrl = baseUrl + encodeURIComponent(searchQuery);
+        console.log(searchUrl);
+        */
+        // + if main topic AND with words parts both exist:
+        const joiner0 = (maintValueRaw.length > 0) && (wwordsValueRaw.length > 0) ?
+            " +" : "";
+        let joiner1 = "";
+        if (wowordsValueRaw.length > 0) {
+            joiner1 = " -";
+            }
+        console.log("wowordsValueRaw.length = ", wowordsValueRaw.length > 0);
+        console.log("joiner1: ", joiner1);
+        wordsTag = document.getElementById("wordsPart");
+        wordsTag.textContent = maintValue;
+        wordsLenTag = document.getElementById("wordsPartLen");
+        wordsLenTag.textContent = maintValueRaw.length;
+        wwordsTag = document.getElementById("withWordsPart");
+        wwordsTag.textContent = wwordsValue;
+        wwordsLenTag = document.getElementById("withWordsPartLen");
+        wwordsLenTag.textContent = wwordsValueRaw.length;
+        wowordsTag = document.getElementById("withoutWordsPart");
+        wowordsTag.textContent = wowordsValue;
+        wowordsLenTag = document.getElementById("withoutWordsPartLen");
+        wowordsLenTag.textContent = wowordsValueRaw.length;
+
+        onsiteTag = document.getElementById("on-site-part");
+        onsiteTag.textContent = onSiteValueRaw;
+        onsiteLenTag = document.getElementById("on-site-words-part-len")
+        onsiteLenTag.textContent = onSiteValueRaw.length;
+        exsiteTag = document.getElementById("ex-site-part");
+        exsiteTag.textContent = exSiteValueRaw;
+        exsiteLenTag = document.getElementById("ex-site-words-part-len")
+        exsiteLenTag.textContent = exSiteValueRaw.length;
+
+        // encoded:
+        // const searchUrl = ddgUrl + encodeURIComponent(maintValue);
+        // vs. raw:
+        let searchUrl = ddgUrl + maintValue + joiner0 + wwordsValue +
+                        joiner1 + wowordsValue;
+        // in case negative search would be to discard:
+        // const searchUrl = (maintValueRaw.length > 0 || ValueRaw.length > 0) ?
+        //     ddgUrl + maintValue + joiner0 + Value + joiner1 + wowordsValue :
+        //     ddgUrl.slice(0, -3);
+        if (onSiteValueRaw.length > 0)
+            searchUrl += ` site:${onSiteValueRaw}`;
+        if (exSiteValueRaw.length > 0)
+            searchUrl += ` -site:${exSiteValueRaw}`;
+
+        resultTag = document.getElementById("resultSearchUrl");
+        resultTag.textContent = searchUrl;
+
+        console.log(searchUrl);
+        // actual search:
+        const active = document.getElementById("active-cbx");
+        console.log("checkbox active: ", active);
+        if (active.checked) {
+            window.location.href=searchUrl;
+            } else {
+            console.log("active.checked: ", active.checked);
+            }
+    });
+
+    function clearFields() {
+        let form = document.getElementById("form-engine");
+        form.querySelectorAll("input, select, textarea").forEach(field => {
+            if (field.type === "checkbox" || field.type === "radio") {
+                field.checked = false;
+            } else if (field.type !== "submit") {
+                field.value = "";
+            }
+        });
+    }
+
+    </script>
+  </body>
+</html>
+
