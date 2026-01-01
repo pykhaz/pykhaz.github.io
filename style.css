@@ -119,6 +119,15 @@ a.article {
     opacity: 1; /* Ustaw widoczność */
 }
 
+.container-termcolors {
+    padding: 5px;
+}
+
+.container-termcolors:hover .hover-khcolors {
+    visibility: visible; /* Pokaż tekst przy najechaniu */
+    opacity: 1; /* Ustaw widoczność */
+}
+
 .container-vim:hover .hover-vim {
     visibility: visible; /* Pokaż tekst przy najechaniu */
     opacity: 1; /* Ustaw widoczność */
