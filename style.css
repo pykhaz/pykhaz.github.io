@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    hover-padding: 10em;
 }
 
 body {
@@ -88,7 +89,7 @@ a.article {
     visibility: hidden; /* Ukryj tekst domyślnie */
     position: fixed; /* Pozycja względem kontenera */
     right: 50px;
-    top: 10em;
+    top: 6em;
     /* top: 100%; /1* Pojawia się nad elementem *1/ */
     /* left: 50%; /1* Wyśrodkowanie tekstu względem kontenera *1/ */
     max-width: 25em;
@@ -111,24 +112,32 @@ a.article {
 /* Specific */
 
 .container-khcolors {
-    padding: 5px;
+    padding: var(--hover-padding);
 }
 
 .container-khcolors:hover .hover-khcolors {
+    padding: 1em;
     visibility: visible; /* Pokaż tekst przy najechaniu */
     opacity: 1; /* Ustaw widoczność */
 }
 
 .container-termcolors {
-    padding: 5px;
+    padding: var(--hover-padding);
 }
 
 .container-termcolors:hover .hover-termcolors {
+    padding: 1em;
     visibility: visible; /* Pokaż tekst przy najechaniu */
     opacity: 1; /* Ustaw widoczność */
 }
 
+.container-vim {
+    padding: var(--hover-padding);
+}
+
 .container-vim:hover .hover-vim {
+    /* padding: var(--hover-container-padding); */
+    padding: 1em;
     visibility: visible; /* Pokaż tekst przy najechaniu */
     opacity: 1; /* Ustaw widoczność */
 }
