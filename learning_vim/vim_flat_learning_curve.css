@@ -1,8 +1,24 @@
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); */
+/* @import url(https://db.onlinewebfonts.com/c/015a135107c13e9eede5852ba7587d0c?family=Hermit); */
+/* @font-face { */
+/*     font-family: "Hermit"; */
+/*     src: url("https://db.onlinewebfonts.com/t/015a135107c13e9eede5852ba7587d0c.eot"); */
+/*     src: url("https://db.onlinewebfonts.com/t/015a135107c13e9eede5852ba7587d0c.eot?#iefix")format("embedded-opentype"), */
+/*     url("https://db.onlinewebfonts.com/t/015a135107c13e9eede5852ba7587d0c.woff2")format("woff2"), */
+/*     url("https://db.onlinewebfonts.com/t/015a135107c13e9eede5852ba7587d0c.woff")format("woff"), */
+/*     url("https://db.onlinewebfonts.com/t/015a135107c13e9eede5852ba7587d0c.ttf")format("truetype"), */
+/*     url("https://db.onlinewebfonts.com/t/015a135107c13e9eede5852ba7587d0c.svg#Hermit")format("svg"); */
+/* } */
+@font-face {
+    font-family: "HurmitNerdFontMono";
+    src: url("assets/fonts/HurmitNerdFontMono-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
-  --pixelFontSize: 1.0em;
+  --pixelFontSize: 0.9em;
 }
 
 * {
@@ -11,10 +27,13 @@
 
 body {
       min-height: 100%;
-      line-height: 1.4em;
+      line-height: 1.5em;
       background-color: black;
       color: white;
-      padding: 1.5em;}
+      padding: 1.5em;
+
+      font-family: Verdana, Arial, sans-serif;
+      }
 
 header {padding: 0; margin: 0;
       padding-right: 3em;
@@ -95,18 +114,22 @@ pre.title code {
       font-size: 2em;
       }
 
-pre.vim code {font-family: VT323;
+pre.vim code {font-family: HurmitNerdFontMono;
+      /* font-family: VT323; */
       font-size: var(--pixelFontSize);
       background-color: black;
       color: #FFBF00;
       padding: 0.0em;
       }
 
-code {font-family: VT323;
+code {font-family: HurmitNerdFontMono;
+      /* font-family: VT323; */
       background-color: #242424;
       color: #FFBF00; /* Amber */
+      border: none 2px lightslategray;
       border-radius: 0.3em;
-      padding: 0.35em;
+      padding: 0.1em 0.35em 0.1em 0.35em;
+      margin: 0.0em;
       font-size: var(--pixelFontSize);
       font-weight: bold;
 }
