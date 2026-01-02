@@ -27,6 +27,17 @@ li {
     border-left: solid 2px lightslategray;
 }
 
+ul.regular {
+    list-style-type: disc;
+    padding-left: 2.0em;
+}
+
+li.regular {
+    padding-left: 0.0em;
+    margin-bottom: 0.1em;
+    border-left: none;
+}
+
 .fg-silver {color: silver;}
 
 /* images */
@@ -136,6 +147,17 @@ a.article {
 }
 
 .container-vim:hover .hover-vim {
+    /* padding: var(--hover-container-padding); */
+    padding: 1em;
+    visibility: visible; /* Pokaż tekst przy najechaniu */
+    opacity: 1; /* Ustaw widoczność */
+}
+
+.container-dda {
+    padding: var(--hover-padding);
+}
+
+.container-dda:hover .hover-dda {
     /* padding: var(--hover-container-padding); */
     padding: 1em;
     visibility: visible; /* Pokaż tekst przy najechaniu */
