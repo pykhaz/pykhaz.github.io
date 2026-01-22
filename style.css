@@ -4,12 +4,36 @@
     hover-padding: 10em;
 }
 
+html {
+    height: 100vh;
+}
+
 body {
     background-color: black;
+    height: 100%;
     color: white;
+
+    padding: 1em;
 
     font-family: "Hermit", monospace;
     font-size: 1em;
+}
+
+h1 {
+    padding-bottom: 0.8em;
+}
+
+h2 {
+    padding-top: 0.6em;
+    padding-bottom: 0.4em;
+}
+
+pre {
+    border: solid white 2px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.0em;
+    margin: 0.5em 1em;
 }
 
 div#main {
