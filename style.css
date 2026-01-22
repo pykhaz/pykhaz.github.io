@@ -163,3 +163,8 @@ a.article {
     visibility: visible; /* Pokaż tekst przy najechaniu */
     opacity: 1; /* Ustaw widoczność */
 }
+
+.container-ddg:hover .hover-ddg {
+    visibility: visible; /* Pokáz tekst przy najechaniu */
+    opacity: 1; /* Ustaw widoczność */
+}
